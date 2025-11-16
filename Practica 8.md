@@ -5,6 +5,7 @@
     HeapSort: Arma un heap con los elementos de la lista, dsp saca el maximo y lo ordena en la lista.                                                   NO ESTABLE      O(n log n)      O(n log n)      O(n log n)
     MergeSort: Divide el arreglo en dos mitades, ordena recursivamente cada mitad, las mezcla (merge) en un arreglo ordenado.                           ESTABLE         O(n log n)      O(n log n)      O(n log n)
     QuickSort: Elige un pivote, particiona el arreglo en 2 partes, los mayores y los menores para despues ordenarlos recursivamente                     NO ESTABLE      O(n log n)      O(n log n)      O(n²)
+    Merge: Combina 2 listas previamente ordenadas       // merge( A, B) con |A|= n  y |B|= m                                                            ESTABLE         O(n + m)        O(n + m)        O(n + m)
 
     NO POR COMPARACION
     BucketSort: Separa los elementos en M categorias, despues crea una lista para cada categoria y las mete manteniendo el orden,                       ESTABLE         O(n + M) + O(ordenar buckets)  
@@ -182,7 +183,20 @@
 
 
 --Ejercicio 14{
-    
+    proc ordenarMultiplos(in A: array<int>, in k: int): array<int>{
+        int n = A.length                                        //O(1)
+        mergeSort(A)                                            //O(n log n)
+        ListaEnlazada listasDeMultiplos = secuenciaVacia        //O(1)
+        for (i = 0, i < n, i++)                                 //O(n)
+            ListaEnlazada aux = secuenciaVacia                  //O(1)
+            for (j = 1, j < k + 1, j++)                         //O(k)
+                aux.agregarAdelante(A[i]*j)                     //O(1)
+            endfor
+            listToArray(aux)                                    //O(k)
+            listasDeMultiplos.agregarAtras(aux)                 //O(1)
+        endfor // Complejidad: O(nk)
+        for (i = 0, i < n,)
+    }
 }
 
 
