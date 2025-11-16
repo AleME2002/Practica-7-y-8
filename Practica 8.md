@@ -137,6 +137,32 @@
 }
 
 
+--Ejercicio 12{
+    proc sensorIndustrial(in A: array<int>): array<int>{
+        int n = A.lentgh                                //O(1)
+        ListaEnlazada enRango = secuenciaVacia          //O(1)
+        ListaEnlazada fueraDeRango = secuenciaVacia     //O(1)
+        for (i = 0, i < n, i++)                         //O(n)
+            if (A[i] >= 20) && (A[i] <= 40)             //O(1)
+                enRango.agregarAdelante(A[i])           //O(1)
+            else
+                fueraDeRango.agregarAdelante(A[i])      //O(1)
+            endif
+        endfor
+        listaToArray(enRango)                           //O(n)
+        listaToArray(fueraDeRango)                      //O(n)
+        bucketSort(enRango)                             //O(n) (Hay 20 categorias por ende M se puede tomar como O(1))
+        selectionSort(fueraDeRango)                     //O(√n²) == //O(n)
+        res = merge(enRango, fueraDeRango)              //O(1)
+        return res                                      //O(1)
+    }
+}
+
+
+--Ejercicio 13--{
+    
+}
+
 
 
 
