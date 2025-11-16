@@ -26,9 +26,9 @@
 
                 res = [1, 1, 1, 2, 3, 3, 7, 7, 7]
 
-    RadixSort: Ordena digito por digito segun el codigo ASCII                                                                                           ESTABLE         O(n*log(max(A)))  Generalmente
-               -                                                                                                                                                        O(n)              Para numeros chicos
-                A = [329, 457, 657, 839, 436, 720, 355]
+    RadixSort: Ordena digito por digito segun el codigo ASCII            // LLamo l a la cantidad de dijitos                                            ESTABLE         O(n log(max(A)))  Generalmente
+               -                                                                                                                                                        O(n l)            para palabras acotadas
+                A = [329, 457, 657, 839, 436, 720, 355]                                                                                                                 O(n)              Para numeros chicos
 
                 res = radixSort(A)
 
@@ -160,9 +160,30 @@
 
 
 --Ejercicio 13--{
-    
+    Orden
+        -Segunda componente
+        -Primer componente
+
+    string[l] ES string de long l (comparar 2 es O(l))
+    T ES < int, string[l]> 
+
+    proc ordenarT(in A: array<T>): array<T>{
+        mergeSort(A)        --> Ordeno ascen. por 1er componente    //O(n log n)
+        radixSort(A)        --> Ordeno por 2da componente           //O(nl) 
+    }
+
+    b.
+
+    proc ordenarT(in A: array<T>): array<T>{
+        bucketSort(A)       --> Ordeno ascen. por 1er componente    //O(n + n) = O(2n) = O(n)
+        radixSort(A)        --> Ordeno por 2da componente           //O(nl) 
+    }
 }
 
+
+--Ejercicio 14{
+    
+}
 
 
 
