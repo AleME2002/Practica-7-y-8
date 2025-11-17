@@ -195,12 +195,46 @@
             listToArray(aux)                                    //O(k)
             listasDeMultiplos.agregarAtras(aux)                 //O(1)
         endfor // Complejidad: O(nk)
-        for (i = 0, i < n,)
+        res = merge(listasDeMultiplos)                          O(nk log nk) 
     }
 }
 
 
+--Ejercicio 17--{
+    Datos:
+        -Hierbas maximo 100 caracteres (acotado)
+        -Stock es una secuencias de tuplas < planta, cantidad> 
+            -Se pueden repetir las plantas
+        -Usos es un diccionario {planta: usos}
+    
+    Orden:
+        -Recolectar devuelve una lista de plantas
+        -Primero las q se usan en mas recetas
+        -Desempata cantidad en almacen
 
+    Planta ES string
+    
+    proc recolectar(in s: Vector< Planta, int>, in u: Diccionario< planta: int>): Vector< Planta>{  // O(n + h log h) con h = # Plantas
+        int n = s.length                                        //O(1)
+        DiccionarioDigital stockTotal = diccionarioVacio     //O(1)
+        for (i = 0, i < n, i++)                                 //O(n)
+            if stockTotal(s[i][0]).esta                      //O(1)
+                int aux = stockTotal.obtener(s[i][0])        //O(1) (ya que las hierbas son acotadas a 100)
+                stockTotal.definir(s[i][0], s[i][1] + aux)   //O(1)
+            else
+                stockTotal.definirRapido(s[i][0], s[i][1])   //O(1)
+            endif
+        endfor
+        int h = stockTotal.length
+        diccToArray(stockTotal) //array<(Planta, int)>       //O(h)
+        for (i = 0, i < )
+    }
+}
+
+--Preguntas--{
+    -Se puede usar "for each elem in"? lo vi en un parcial q estaba bien.
+    -Se puede usar "diccToArray" o "conjToArray" o etc.? y q pasa si es por ejemplo un diccTrieToArray o un diccLogToArray, tmb se puede usar?
+}
 
 
 
