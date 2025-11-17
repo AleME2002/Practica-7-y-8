@@ -221,9 +221,9 @@
     Planta ES string
     
     proc recolectar(in s: Vector< Planta, int>, in u: Diccionario< planta: int>): Vector< Planta>{  // O(n + h log h) con h = # Plantas
-        int n = s.length                                        //O(1)
+        int n = s.length                                     //O(1)
         DiccionarioDigital stockTotal = diccionarioVacio     //O(1)
-        for (i = 0, i < n, i++)                                 //O(n)
+        for (i = 0, i < n, i++)                              //O(n)
             if stockTotal(s[i][0]).esta                      //O(1)
                 int aux = stockTotal.obtener(s[i][0])        //O(1) (ya que las hierbas son acotadas a 100)
                 stockTotal.definir(s[i][0], s[i][1] + aux)   //O(1)
