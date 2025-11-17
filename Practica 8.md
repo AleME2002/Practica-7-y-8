@@ -16,7 +16,13 @@
                 Azul = 0, Rojo = 1, Verde = 2
                 res = bucketSort( A, M)     // en este caso M = 3
 
-                res = [(azul, 2), (azul, 4), (rojo, 5), (rojo, 1), (rojo, 3), (verde, 9), (verde, 6)]
+                res = [(azul, 2), (azul, 4), (rojo, 5), (rojo, 1), (rojo, 3), (verde, 9), (verde, 6)]   
+                
+                Tambien se puede pedir orden adicional
+
+                res = bucketSort( A, M) --> ordeno primero por categoria y desempata ascen. 2da componente                                                              O(n log n)
+
+                res = [(azul, 2), (azul, 4), (rojo, 1), (rojo, 3), (rojo, 5), (verde, 6), (verde, 9)]
 
     CountingSort: Asume que los elementos son naturales y que estan acotados por un valor k, Crea un arreglo de conteo de tamaño k, cuenta cuántas      NO ESTABLE      O(n + k)
                    veces aparece cada valor, y luego reconstruye la lista ordenada repitiendo cada número la cantidad de veces que apareció.
@@ -28,7 +34,7 @@
                 res = [1, 1, 1, 2, 3, 3, 7, 7, 7]
 
     RadixSort: Ordena digito por digito segun el codigo ASCII            // LLamo l a la cantidad de dijitos                                            ESTABLE         O(n log(max(A)))  Generalmente
-               -                                                                                                                                                        O(n l)            para palabras acotadas
+               -                                                                                                                                                        O(nl)             para palabras acotadas
                 A = [329, 457, 657, 839, 436, 720, 355]                                                                                                                 O(n)              Para numeros chicos
 
                 res = radixSort(A)
@@ -227,7 +233,12 @@
         endfor
         int h = stockTotal.length
         diccToArray(stockTotal) //array<(Planta, int)>       //O(h)
-        for (i = 0, i < )
+        Vector aux = vectorVacio
+        for each elem in u                                   //O(h)
+            lo meto en aux con tercera componente la cantidad en stockTotal
+        endfor
+        mergeSort(aux) --> ordena de forma desc. segun 2da componente y desempata de forma desc. la tercer componente
+        se termina facil
     }
 }
 
