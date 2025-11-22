@@ -17,12 +17,6 @@
                 res = bucketSort( A, M)     // en este caso M = 3
 
                 res = [(azul, 2), (azul, 4), (rojo, 5), (rojo, 1), (rojo, 3), (verde, 9), (verde, 6)]   
-                
-                Tambien se puede pedir orden adicional
-
-                res = bucketSort( A, M) --> ordeno primero por categoria y desempata ascen. 2da componente                                                              O(n log n)
-
-                res = [(azul, 2), (azul, 4), (rojo, 1), (rojo, 3), (rojo, 5), (verde, 6), (verde, 9)]
 
     CountingSort: Asume que los elementos son naturales y que estan acotados por un valor k, Crea un arreglo de conteo de tamaño k, cuenta cuántas      NO ESTABLE      O(n + k)
                    veces aparece cada valor, y luego reconstruye la lista ordenada repitiendo cada número la cantidad de veces que apareció.
