@@ -12,6 +12,7 @@
     -Sintaxis:
         -Asignacion: x = E
         -Nada: Skip
+<<<<<<< HEAD
         -Secuencia: S1; S2
         -Condicional: if B then S1 else S2 endif
     
@@ -20,4 +21,11 @@
         2. WP(skip, Q) = Q
         3. WP(S1; S2, Q) = WP(S1, WP(S2, Q))
         4. Si S = if B then S1 else S2 endif ⇛ WP(S, Q) = def(B) ⩓ₗ ((B ⩓ WP(S1, Q)) ⩔ (¬B ⩓ WP(S2, Q))) 
+=======
+        -Secuencia: S1;S2
+        -Condicional: if B then S1 else S2 endif
+    
+    -Axiomas:
+        1. WP(x = E, Q) = def(E) yl 
+>>>>>>> 111dcc5a307317ac43279ccbf46261bb2a115bd9
 }
