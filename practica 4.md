@@ -4,11 +4,11 @@
     -Ejemplos de def
         -def(x) = True
         -def(x = < > E) = True
+        -def(a mod 2 = 0) = True
         -def(x + - * E) = True
         -def(s[i]) = 0 ≤ i < |s|
         -def(s[0]) = |s| ≥ 1
         -def(1/y) = y ≠ 0
-        -def(s[i] > 0) = ?
 
     -WP(S,Q) es la p mas debil tal que {P} S {Q}
 
