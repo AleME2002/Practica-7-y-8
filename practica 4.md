@@ -9,6 +9,8 @@
         -def(s[i]) = 0 ≤ i < |s|
         -def(s[0]) = |s| ≥ 1
         -def(1/y) = y ≠ 0
+        -def(setAt(L, i, E)) = (def(E) ⩓ def(L) ⩓ def(i)) ⩓ₗ (0 ≤ i < |L|)
+        -def(setAt(s, 0, 0)) = |s| ≥ 1 ó |s| > 0
 
     -WP(S,Q) es la p mas debil tal que {P} S {Q}
 
@@ -29,7 +31,4 @@
         2. WP(skip, Q) = Q
         3. WP(S1; S2, Q) = WP(S1, WP(S2, Q))
         4. Si S = if B then S1 else S2 endif ⇛ WP(S, Q) = def(B) ⩓ₗ ((B ⩓ WP(S1, Q)) ⩔ (¬B ⩓ WP(S2, Q)))
-    
-    -SetAt(L, i, E) devuelve una secuencuia igual a la original pero el elemento en la posicion L[i] cambiado por E
-        -def(setAt(L, i, E)) = (def(E) ⩓ def(L) ⩓ def(i)) ⩓ₗ (0 ≤ i < |L|)
 }
