@@ -1,6 +1,15 @@
 --Resumen--{
     -Cuando un programa S es correcto respecto a la especificacion (P,Q) se dice:  {P} S {Q}
 
+    -Ejemplos de def
+        -def(x) = True
+        -def(x = < > E) = True
+        -def(x + - * E) = True
+        -def(s[i]) = 0 ≤ i < |s|
+        -def(s[0]) = |s| ≥ 1
+        -def(1/y) = y ≠ 0
+        -def(s[i] > 0) = ?
+
     -WP(S,Q) es la p mas debil tal que {P} S {Q}
 
         Ej: Requiere: {P}
